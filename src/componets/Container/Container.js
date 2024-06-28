@@ -1,6 +1,8 @@
 function Container (props){
     return (
-        <div id={props.id}></div>
+        <>
+            <div id={props.id}></div>
+        </>
     )
 }
 

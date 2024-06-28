@@ -282,20 +282,18 @@ function App() {
     }
     
     function addQuote (content, author) {
-      document.getElementById("add-quote").value = ""
-      document.getElementById("add-author").value = ""
       quotes.push({
           id: quotes.length + 1,
           quote: content,
           author: author,
       })
-      return (
-          `<div>
-              <p class="quote-content">${content}</p>
-              <p class="quote-author">${author}</p>
-          </div>
-          `
-      )
+      console.log("again consoling" + content, author)
+      return (`
+        <div>
+          <p class="quote-content">${content}</p>
+          <p class="quote-author">${author}</p>
+        </div>
+      `)
     }
     
     function filterQuotesByAuthor(author){
@@ -318,9 +316,9 @@ function App() {
 
     formToAddQuote.addEventListener("submit", (e) => {
       e.preventDefault();
-      const addQuoteContent = document.getElementById("add-quote").value;
-      const addQuoteAuthor = document.getElementById("add-author").value;
-
+      let addQuoteContent = document.getElementById("add-quote").value;
+      let addQuoteAuthor = document.getElementById("add-author").value;
+      console.log(addQuoteContent, addQuoteAuthor)
       container.innerHTML = addQuote(addQuoteContent, addQuoteAuthor);
     });
 
