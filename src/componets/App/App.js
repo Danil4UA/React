@@ -302,7 +302,7 @@ function App() {
               `<p>${item.quote}</p>`
           )
       })
-      if(result){
+      if(result.length < 1){
           return "The qoute is not found in the data base. Please genereta the random quote or add a new author"
       }
       return result.join("")
